@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name = "struts.devMode" value = "true" />
+	<package name = "com.internousdev.manager.action" extends = "struts-default, json-default">
+		<action name = "HomeAction" class = "com.internousdev.manager.action.HomeAction"
+		method = "execute">
+			<result name = "success">home.jsp</result>
+		</action>
+
+		<action name = "GoHomeAction" class = "com.internousdev.manager.action.GoHomeAction"
+		method = "execute">
+			<result name = "success">home.jsp</result>
+		</action>
+
+		<action name = "LoginAction" class = "com.internousdev.manager.action.LoginAction"
+		method = "execute">
+			<result name = "error">home.jsp</result>
+			<result name = "success">myPage.jsp</result>
+			<result name = "admin">home.jsp</result>
+		</action>
+
+		<action name = "CreateCodeAction" class = "com.internousdev.manager.action.CreateCodeAction"
+		method = "execute">
+			<result name = "success">createCode.jsp</result>
+		</action>
+
+		<action name = "CreateCodeConfirmAction" class = "com.internousdev.manager.action.CreateCodeConfirmAction"
+		method = "execute">
+			<result name = "success">createCodeConfirm.jsp</result>
+			<result name = "error">error.html</result>
+		</action>
+
+		<action name = "CreateCodeCompleteAction" class = "com.internousdev.manager.action.CreateCodeCompleteAction"
+		method = "execute">
+			<result name = "sessionTimeout">sessionError.jsp</result>
+			<result name = "success">createCodeComplete.jsp</result>
+			<result name = "error">error.html</result>
+		</action>
+
+		<action name = "ThisMonthShiftAction" class = "com.internousdev.manager.action.ThisMonthShiftAction"
+		method = "execute">
+			<result name = "sessionTimeout">sessionError.jsp</result>
+			<result name = "success">thisMonthShift.jsp</result>
+			<result name = "error">error.html</result>
+		</action>
+
+		<action name = "NextMonthShiftAction" class = "com.internousdev.manager.action.NextMonthShiftAction"
+		method = "execute">
+			<result name = "success">nextMonthShift.jsp</result>
+		</action>
+
+		<action name = "NextMonthShiftConfirmAction" class = "com.internousdev.manager.action.NextMonthShiftConfirmAction"
+		method = "execute">
+			<result name = "success" type = "json">nextMonthShiftConfirm.jsp</result>
+			<result name = "error">error.html</result>
+		</action>
+
+		<action name = "ShiftCheckAction" class = "com.internousdev.manager.action.ShiftCheckAction"
+		method = "execute">
+			<result name = "success">admin.jsp</result>
+		</action>
+
+		<action name = "ShiftManageAction" class = "com.internousdev.manager.action.ShiftManageAction"
+		method = "execute">
+			<result name = "success">shiftManage.jsp</result>
+		</action>
+	</package>
+
+</struts>
